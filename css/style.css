@@ -408,7 +408,142 @@ img {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+/* FAQ Section */
+.faq-section {
+  padding: 50px 20px;
+  background: #fdfdfd;
+  font-family: 'Poppins', sans-serif;
+}
 
+.faq-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  background: none;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question .icon {
+  font-size: 20px;
+  transition: 0.3s;
+  color: #2563eb; /* stylish blue */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  padding: 12px 0;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Active state */
+.faq-item.active .faq-answer {
+  max-height: 120px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .faq-title{font-size:24px;}
+  .faq-question{font-size:14px;}
+  .faq-answer p{font-size:13px;}
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1a73e8;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding-right: 25px;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 10px;
+    color: #555;
+}
+
+.faq-answer p {
+    margin: 10px 0 0 0;
+}
 /* CTA Section */
 .cta-section {
     background-color: var(--primary-color);
@@ -541,6 +676,68 @@ img {
     color: var(--primary-color);
 }
 
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: #fff;
+  font-size: 26px;
+  padding: 14px;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Icon center */
+.whatsapp-float i {
+  display: block;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+/* Tooltip */
+.whatsapp-float .tooltip {
+  position: absolute;
+  right: 65px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1F2937;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+/* Show tooltip on hover */
+.whatsapp-float:hover .tooltip {
+  opacity: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    font-size: 22px;
+    padding: 12px;
+  }
+
+  .whatsapp-float .tooltip {
+    display: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .hero-text h1 {
@@ -636,4 +833,29 @@ img {
     .btn {
         width: 100%;
     }
+}
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #fff; /* change color based on your website design */
+}
+
+.contact-info i {
+    margin-right: 8px;
+    color: #1a73e8; /* icon color */
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #1a73e8;
 }

@@ -62,6 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  const question = item.querySelector(".faq-question");
+  question.addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
     // Form Validation (Simple)
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
@@ -120,7 +128,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         lastScroll = currentScroll;
     });
+const questions = document.querySelectorAll('.faq-question');
 
+questions.forEach(q => {
+    q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        if (q.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+            answer.style.maxHeight = '0';
+        }
+    });
+});
     // Simple Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1
